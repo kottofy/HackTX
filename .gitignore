@@ -1,3 +1,4 @@
-node_modules/
-*.js.map
-package-lock.json
+node_modules
+.vscode
+azurecodesHackIllinois.csv
+.env

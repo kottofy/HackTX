@@ -1,19 +1,20 @@
 {
-  "name": "luisbot",
+  "name": "azurecreditbot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "botbuilder": "^3.8.4",
-    "restify": "^5.0.0"
-  },
-  "devDependencies": {
-    "request": "^2.81.0",
-    "zip-folder": "^1.0.0"
-  },
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "azure-storage": "^1.3.1",
+    "botbuilder": "^3.10.1",
+    "dotenv": "^4.0.0",
+    "nodemailer": "^2.6.4",
+    "nodemailer-smtp-transport": "^2.7.2",
+    "restify": "^4.1.1",
+    "validator": "^6.1.0"
+  }
 }

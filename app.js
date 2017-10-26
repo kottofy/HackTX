@@ -1,52 +1,37 @@
-/*-----------------------------------------------------------------------------
-A simple echo bot for the Microsoft Bot Framework. 
------------------------------------------------------------------------------*/
-
-var restify = require('restify');
-var builder = require('botbuilder');
+require('dotenv').config()
+const restify = require('restify')
+const builder = require('botbuilder')
 
 // Setup Restify Server
-var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function () {
-   console.log('%s listening to %s', server.name, server.url); 
-});
-  
-// Create chat connector for communicating with the Bot Framework Service
-var connector = new builder.ChatConnector({
-    appId: process.env.MicrosoftAppId,
-    appPassword: process.env.MicrosoftAppPassword,
-    stateEndpoint: process.env.BotStateEndpoint,
-    openIdMetadata: process.env.BotOpenIdMetadata 
-});
+const server = restify.createServer()
+server.listen(process.env.port || process.env.PORT || 3980, function () {
+  console.log('%s listening to %s', server.name, server.url)
+})
 
-// Listen for messages from users 
-server.post('/api/messages', connector.listen());
+// Create chat bot
+const connector = new builder.ChatConnector({
+  appId: process.env.APP_ID,
+  appPassword: process.env.APP_PASS
+})
 
-/*----------------------------------------------------------------------------------------
-* Bot Storage: This is a great spot to register the private state storage for your bot. 
-* We provide adapters for Azure Table, CosmosDb, SQL Azure, or you can implement your own!
-* For samples and documentation, see: https://github.com/Microsoft/BotBuilder-Azure
-* ---------------------------------------------------------------------------------------- */
+const bot = new builder.UniversalBot(connector)
+server.post('/api/messages', connector.listen())
 
-// Create your bot with a function to receive messages from the user
-var bot = new builder.UniversalBot(connector);
+const model = `https://api.projectoxford.ai/luis/v1/application?id=${process.env.LUIS_ID}&subscription-key=${process.env.LUIS_KEY}&verbose=true`
+bot.recognizer(new builder.LuisRecognizer(model))
 
-// Make sure you add code to validate these fields
-var luisAppId = process.env.LuisAppId;
-var luisAPIKey = process.env.LuisAPIKey;
-var luisAPIHostName = process.env.LuisAPIHostName || 'westus.api.cognitive.microsoft.com';
+bot.library(require('./app/dialogs/greeting').createLibrary())
+bot.library(require('./app/dialogs/teamInfo').createLibrary())
+bot.library(require('./app/dialogs/techHelp').createLibrary())
+bot.library(require('./app/dialogs/azureCode').createLibrary())
+bot.library(require('./app/dialogs/negativeComment').createLibrary())
+bot.library(require('./app/dialogs/profanity').createLibrary())
+bot.library(require('./app/dialogs/azureCodeError').createLibrary())
+bot.library(require('./app/dialogs/endConvo').createLibrary())
+bot.library(require('./app/dialogs/botHelp').createLibrary())
+bot.library(require('./app/dialogs/none').createLibrary())
 
-const LuisModelUrl = 'https://' + luisAPIHostName + '/luis/v1/application?id=' + luisAppId + '&subscription-key=' + luisAPIKey;
-
-// Main dialog with LUIS
-var recognizer = new builder.LuisRecognizer(LuisModelUrl);
-var intents = new builder.IntentDialog({ recognizers: [recognizer] })
-/*
-.matches('<yourIntent>')... See details at http://docs.botframework.com/builder/node/guides/understanding-natural-language/
-*/
-.onDefault((session) => {
-    session.send('Sorry, I did not understand \'%s\'.', session.message.text);
-});
-
-bot.dialog('/', intents);    
-
+server.get(/\/?.*/, restify.plugins.serveStatic({
+  directory: __dirname,
+  default: 'index.html'
+}))
