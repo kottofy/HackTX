@@ -10,7 +10,7 @@ const tableSvc = azure.createTableService(process.env.AZURE_STORE_CONNSTR)
 function updateCreditTable (row) {
   const entGen = azure.TableUtilities.entityGenerator
   const updatedtask = {
-    PartitionKey: entGen.String('Credit'),
+    PartitionKey: entGen.String('Credits'),
     RowKey: entGen.String(row),
     Timestamp: entGen.DateTime(new Date(Date.now())),
     Used: true
