@@ -17,7 +17,9 @@ const connector = new builder.ChatConnector({
 const bot = new builder.UniversalBot(connector)
 server.post('/api/messages', connector.listen())
 
-const model = `https://api.projectoxford.ai/luis/v1/application?id=${process.env.LUIS_ID}&subscription-key=${process.env.LUIS_KEY}&verbose=true`
+// const model = `https://api.projectoxford.ai/luis/v1/application?id=${process.env.LUIS_ID}&subscription-key=${process.env.LUIS_KEY}&verbose=true`
+const model = `https://eastus2.api.cognitive.microsoft.com/luis/v2.0/apps/${process.env.LUIS_ID}?subscription-key=${process.env.LUIS_KEY}&timezoneOffset=0&verbose=true`
+
 bot.recognizer(new builder.LuisRecognizer(model))
 
 bot.dialog('/', [
