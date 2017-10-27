@@ -18,7 +18,7 @@ module.exports = {
     {
       name: 'Egbert',
       techFocus: ['Academic Program Manager'],
-      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/egbert.jpg'
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/egbert.png'
     },
     {
       name: 'Kristin',
