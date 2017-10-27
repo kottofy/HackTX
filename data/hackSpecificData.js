@@ -1,49 +1,49 @@
 module.exports = {
-  hackName: 'CalHacks',
-  surveyLink: 'https://aka.ms/CalHacks',
-  teamEmail: 'calhacks@microsoft.com',
+  hackName: 'HackTX',
+  surveyLink: 'https://aka.ms/HackTX',
+  teamEmail: 'hacktx@microsoft.com',
   prize: 'a GoPro Hero 5',
-  boothLocation: 'near the support desk on the first floor',
+  boothLocation: 'TBD',
   teamMembers: [
     {
-      name: 'Alina',
-      techFocus: ['Java', 'Python'],
-      photoLink: 'https://raw.githubusercontent.com/jcocchi/HannahHackathon/master/images/Alina.jpg'
+      name: 'Brian',
+      techFocus: ['Azure', '.NET', 'Python', 'Cognitive Services', 'IoT', 'Cosmos DB'],
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/brian.jpg'
     },
     {
-      name: 'Davies',
-      techFocus: ['Algorithms', 'NLP', 'UI/UX', 'Web Dev'],
-      photoLink: 'https://raw.githubusercontent.com/jcocchi/HannahHackathon/master/images/Davies.png'
+      name: 'Deanna',
+      techFocus: ['Program Manager'],
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/deanna.jpg'
     },
     {
-      name: 'Justine',
-      techFocus: ['Bot Framework', 'Cognitive Services', 'Web Dev', 'JavaScript'],
-      photoLink: 'https://raw.githubusercontent.com/jcocchi/HannahHackathon/master/images/Justine.jpg'
+      name: 'Egbert',
+      techFocus: ['Academic Program Manager'],
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/egbert.jpg'
     },
     {
-      name: 'Pablo',
-      techFocus: ['Azure', 'IaaS', 'Web Dev'],
-      photoLink: 'https://raw.githubusercontent.com/jcocchi/HannahHackathon/master/images/Pablo.jpg'
+      name: 'Kristin',
+      techFocus: ['IoT', 'Bots', 'Web Dev', 'Node.js', 'Cognitive Services'],
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/kristin.png'
     },
     {
-      name: 'Sara',
-      techFocus: ['Python', 'C#', 'Cognitive Services', 'Azure Media Services'],
-      photoLink: 'https://raw.githubusercontent.com/jcocchi/HannahHackathon/master/images/Sara.jpg'
+      name: 'Malika',
+      techFocus: ['Apps'],
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/malika.jpg'
     },
     {
-      name: 'Shan',
-      techFocus: ['Ruby on Rails', 'Java', 'Python', 'Distributed Systems'],
-      photoLink: 'https://raw.githubusercontent.com/jcocchi/HannahHackathon/master/images/Shan.jpg'
+      name: 'Paul',
+      techFocus: ['Azure', 'IoT', '.NET'],
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/paul.png'
     },
     {
-      name: 'Tim',
-      techFocus: ['Azure', 'Blockchain', 'JavaScript', 'Mongo DB', 'C#'],
-      photoLink: 'https://raw.githubusercontent.com/jcocchi/HannahHackathon/master/images/Tim.jpg'
+      name: 'Rachel',
+      techFocus: ['Cognitive Services', 'Node.js/JavaScript', 'Web dev/Frontend'],
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/rachel.png'
     },
     {
-      name: 'Yashika',
-      techFocus: ['General Microsoft Tech'],
-      photoLink: 'https://raw.githubusercontent.com/jcocchi/HannahHackathon/master/images/Yashika.png'
+      name: 'Rokeya',
+      techFocus: ['Academic Director'],
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/rokeya.png'
     }
   ]
 }
