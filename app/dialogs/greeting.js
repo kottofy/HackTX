@@ -8,7 +8,6 @@ lib.dialog('/', [
   }
 ]).triggerAction({
   matches: 'greeting'
-  // intentThreshold: 0.8
 })
 
 module.exports.createLibrary = function () {
