@@ -8,12 +8,12 @@ module.exports = {
     {
       name: 'Brian',
       techFocus: ['Azure', '.NET', 'Python', 'Cognitive Services', 'IoT', 'Cosmos DB'],
-      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/brian.jpg'
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/brian.png'
     },
     {
       name: 'Deanna',
       techFocus: ['Program Manager'],
-      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/deanna.jpg'
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/deanna.png'
     },
     {
       name: 'Egbert',
@@ -28,7 +28,7 @@ module.exports = {
     {
       name: 'Malika',
       techFocus: ['Apps'],
-      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/malika.jpg'
+      photoLink: 'https://raw.githubusercontent.com/kottofy/HackTX/master/images/malika.png'
     },
     {
       name: 'Paul',
